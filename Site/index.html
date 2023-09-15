@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="NL">
+
+<head>
+    <title>TEST</title>
+</head>
+
+<body id="top">
+
+    <h1>Simple PING API</h1>
+    <a href="#" onclick="getPing()">Click here to test the API</a>
+    <br>
+    <br>
+    Ping: <span id="pingResponse">???</span>
+    <br>
+    <hr>
+    <h1>Get from Storage API</h1>
+    <form id="RowForm" action="#" method="post">
+        <input type="text" name="Row" id="Row" value="1" required>
+        <input type="submit" name="GetRow" id="GetRow" value="Get the Value">
+    </form>
+    Value: <span id="storageResponse">???</span>
+    <br>
+    <hr>
+    <h1>Test Login</h1>
+    <a href="#" onclick="login()">Click here to log in</a>
+    <br>
+    <br>
+    <a href="#" onclick="logout()">Click here to log out</a>
+    <br>
+    <br>
+    User: <span id="currentaccount">???</span>
+    <br>
+    Role(s): <span id="currenToken">???</span>
+    <br>
+    <hr>
+    <h1>Get base64 string from API</h1>
+    <form id="Base64Form" action="#" method="post">
+        <input type="text" name="String" id="String" value="Hello World!" required>
+        <input type="submit" name="GetBase64" id="GetBase64" value="Convert the Value">
+    </form>
+    Value: <span id="base64Response">???</span>
+    <br>
+
+    <script src="https://alcdn.msftauth.net/browser/2.22.0/js/msal-browser.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+[...]
+    <set-body template="liquid">
+    {
+        "row": "{{context.Request.OriginalUrl.Query.row}}"
+    }
+    </set-body>
+    <set-header name="Content-Type" exists-action="override">
+        <value>application/json</value>
+    </set-header>
+[...]

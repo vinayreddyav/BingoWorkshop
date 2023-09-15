@@ -1,0 +1,36 @@
+[...]
+<cors>
+    <allowed-origins>
+        <origin>*</origin>
+    </allowed-origins>
+    <allowed-methods preflight-result-max-age="300">
+        <method>*</method>
+    </allowed-methods>
+    <allowed-headers>
+        <header>*</header>
+    </allowed-headers>
+    <expose-headers>
+        <header>*</header>
+    </expose-headers>
+</cors>
+<validate-jwt header-name="Authorization" failed-validation-httpcode="401" failed-validation-error-message="Unauthorized. Access token is missing or invalid.">
+    <openid-config url="https://login.microsoftonline.com/YOUR TENANT ID/v2.0/.well-known/openid-configuration" />
+    <audiences>
+        <audience>YOU CLIENT ID</audience>
+    </audiences>
+    <required-claims>
+        <claim name="roles" match="all">
+            <value>Admin</value>
+        </claim>
+    </required-claims>
+</validate-jwt>
+<set-body template="liquid">
+{
+    "String": "{{context.Request.OriginalUrl.Query.string}}"
+}
+</set-body>
+<set-header name="Content-Type" exists-action="override">
+    <value>application/json</value>
+</set-header>
+<set-method id="apim-generated-policy">POST</set-method>
+[...]
